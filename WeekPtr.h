@@ -44,7 +44,7 @@ public:
         } else {
             ShrdPtr<T> newShrdPtr(ptr);
             newShrdPtr.refCounter = refCounter;
-            newShrdPtr.refCounter->count.fetch_add(1, std::memory_order_relaxed); // <-- ИСПРАВЛЕНО!
+            newShrdPtr.refCounter->count.fetch_add(1, std::memory_order_relaxed); 
             return newShrdPtr;
         }
     }
